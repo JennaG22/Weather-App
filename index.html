@@ -10,113 +10,84 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="styles.css" />
+
+    <link rel="stylesheet" href="src/styles.css" />
     <title>Weather App</title>
   </head>
-
   <body>
     <div class="container">
-      <div class="weather-app">
-        <form class="search-form" id="search-form">
-          <div class="row">
-            <div class="col-9">
-              <input
-                type="search"
-                placeholder="🔎 Search City"
-                autofocus="on"
-                autocomplete="off"
-                id="city-input"
-                class="form-control shadow-sm"
-              />
-            </div>
-            <div class="col-3">
-              <input
-                type="submit"
-                value="Search"
-                class="form-control btn btn-primary shadow-sm"
-              />
-            </div>
-          </div>
-          <br />
-        </form>
-        <h1 id="city">
-          Orlando, Florida
-        </h1>
-        <br />
-        <ul>
-          <li id="date"></li>
-          <br />
-          <li>
-            Partly Cloudy
-          </li>
-          <br />
-          <li>85<span class="units">
-              <a href="#" id="fahrenheit-link">°F</a> |
-              <a href="#" id="celsius-link">°C</a></li>
-              <br />
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <div class="clearfix">
-              <div class="float-left">
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <form id="search-form" class="mb-3">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="🔎 Search City"
+                  class="form-control"
+                  id="city-input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-primary w-100"
+                />
               </div>
             </div>
+          </form>
+          <div class="overview">
+            <h1 id="city"></h1>
+            <ul>
+              <li>Last updated: <span id="date"></span></li>
+              <li id="description"></li>
+            </ul>
           </div>
-        </div>
-        <br />
-        <div class="row row-cols-5">
-          <div class="col">
-            <strong>Mon</strong> <br /><br />
-            <div class="emoji">⛅</div>
-            <br /><span>88ºF</span>
+          <div class="row">
+            <div class="col-6">
+              <div class="clearfix weather-temperature">
+                <img src="" alt="Clear" id="icon" class="float-left" />
+                <div class="float-left">
+                  <strong id="temperature"></strong
+                  ><span class="units"
+                    ><a href="#" id="celsius-link" class="active">°C</a> |
+                    <a href="#" id="fahrenheit-link">°F</a></span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
+              </ul>
+            </div>
           </div>
-          <div class="col">
-            <strong>Tue</strong><br /><br />
-            <div class="emoji">💧</div>
-            <br /><span>85ºF</span>
-          </div>
-          <div class="col">
-            <strong>Wed</strong> <br /><br />
-            <div class="emoji">⚡</div>
-            <br /><span>79ºF</span>
-          </div>
-          <div class="col">
-            <strong>Thu</strong><br /><br />
-            <div class="emoji">☔</div>
-            <br /><span>86ºF</span>
-          </div>
-          <div class="col">
-            <strong>Fri</strong><br /><br />
-            <div class="emoji">🌈</div>
-            <br /><span>91ºF</span>
-          </div>
-          <div class="col">
-            <strong>Sat</strong><br /><br />
-            <div class="emoji">🌞</div>
-            <br /><span>89ºF</span>
-          </div>
-          <div class="col">
-            <strong>Sun</strong><br /><br />
-            <div class="emoji">🌜</div>
-            <br /><span>90ºF</span>
-          </div>
+          <div class="weather-forecast" id="forecast"></div>
         </div>
       </div>
     </div>
     <p class="footer">
-     <span>
-            <a
-              class="Github"
-              href="https://github.com/JennaG22/Weather-App"
-              target="_blank"
-            >
-              Open-Source Code,
-            </a></span
-          > by Jenna Guerrido</p>
-    <script src="script.js"></script>
+      <span>
+        <a
+          class="Github"
+          href="https://github.com/JennaG22/Weather-App"
+          target="_blank"
+        >
+          Open-Source Code,
+        </a></span
+      >
+      by Jenna Guerrido
+    </p>
+    <script src="src/script.js"></script>
   </body>
 </html>
